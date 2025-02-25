@@ -4,6 +4,19 @@ This repository contains Python scripts and mathematical notes for performing or
 
 We use gradient descent (and variants) to converge to optimized orbitals for a CAS(2,2) active space. Several example scripts are included—some of which use JAX to compute gradients automatically, while others use finite-difference approximations.
 
+
+## Example Plots
+
+Below are some example figures showcasing how the Frobenius norm and energy difference behave during the orbital optimization process.
+
+![Frobenius Norm Optimization Plot](./plots/frobenius_norm_opt_v7.png "Frobenius norm of the matrix of sines vs. iteration")
+
+_**Figure 1:** The Frobenius norm decreases steadily over iterations, indicating alignment between the trial and CASSCF orbitals._
+
+![Frobenius Norm and Energy Difference](./plots/frobenius_norm_and_energy_diff_opt.png "Frobenius norm and energy difference vs. iteration")
+
+_**Figure 2:** A comparison of the Frobenius norm and the CASCI–CASSCF energy difference versus iteration._
+
 ## Contents
 
 - **`opt_C_v2.py`**  
