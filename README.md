@@ -22,28 +22,28 @@ We use gradient descent (and variants) to converge to optimized orbitals for a C
 
 1. **Overlap Matrix**  
    Given two sets of orbitals, \( C_{\text{CASSCF}} \) and \( C_{\text{trial}} \), and the atomic orbital overlap matrix \( S \), we construct:
-   \[
+   $$
    M = C_{\text{CASSCF}}^\dagger \; S \; C_{\text{trial}}.
-   \]
+   $$
 
 2. **Singular Value Decomposition (SVD)**  
    We compute:
-   \[
+   $$
    M = U \Sigma V^\dagger,
-   \]
+   $$
    where \(\Sigma\) contains the singular values \(\sigma_i\). These \(\sigma_i\) can be interpreted as cosines of the principal angles between the subspaces spanned by each set of orbitals.
 
 3. **Frobenius Norm of the Matrix of Sines**  
    We define:
-   \[
+   $$
    ||d||_F = \sqrt{ \sum_i \bigl(1 - \sigma_i^2\bigr) }.
-   \]
+   $$
    Minimizing \( ||d||_F \) pushes the orbitals in \( C_{\text{trial}} \) to align as closely as possible with \( C_{\text{CASSCF}} \).
 
 4. **Gradient Descent**  
-   We update \( C_{\text{trial}} \) to reduce this measure of misalignment. Each step includes:
+   We update $$  C_{\text{trial}} $$ to reduce this measure of misalignment. Each step includes:
    - **Computing** the gradient (via autodiff or finite differences).
-   - **Updating** \( C_{\text{trial}} \).
+   - **Updating** $$ C_{\text{trial}} $$.
    - **Re-orthonormalizing** with respect to \( S \) to ensure the orbitals remain valid.
 
 5. **Including an Energy Term (Optional)**  
