@@ -1,6 +1,6 @@
 # H2 CAS(2,2) Orbital Optimization
 
-This repository contains Python scripts and mathematical notes for performing orbital optimization on a simple H2 molecule. The main idea is to start from Hartree-Fock orbitals and iteratively minimize the Frobenius norm of the matrix of sines of principal angles between our trial orbitals and the “target” CASSCF orbitals, subject to orthonormality constraints.
+This repository contains Python scripts and notes for performing orbital optimization on a simple H2 molecule. The main idea is to start from Hartree-Fock orbitals and iteratively minimize the Frobenius norm of the matrix of sines of principal angles between our trial orbitals and the “target” CASSCF orbitals, subject to orthonormality constraints.
 
 We use gradient descent (and variants) to converge to optimized orbitals for a CAS(2,2) active space. Several example scripts are included—some of which use JAX to compute gradients automatically, while others use finite-difference approximations.
 
